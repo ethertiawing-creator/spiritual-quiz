@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg1" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fce7f3"/>
+      <stop offset="100%" stop-color="#f0f9ff"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="80%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#f0f9ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fda4af" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#fda4af" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#86efac" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#86efac" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- Accent circles -->
+  <circle cx="160" cy="160" r="220" fill="url(#glow1)"/>
+  <circle cx="1050" cy="490" r="200" fill="url(#glow2)"/>
+  <circle cx="1080" cy="120" r="140" fill="#c4b5fd" opacity="0.12"/>
+
+  <!-- Decorative stars -->
+  <circle cx="80" cy="80" r="5" fill="#c4b5fd" opacity="0.7"/>
+  <circle cx="200" cy="50" r="4" fill="#fda4af" opacity="0.6"/>
+  <circle cx="1100" cy="80" r="6" fill="#86efac" opacity="0.7"/>
+  <circle cx="1150" cy="200" r="4" fill="#fde68a" opacity="0.6"/>
+  <circle cx="50" cy="400" r="5" fill="#7dd3fc" opacity="0.6"/>
+  <circle cx="1170" cy="500" r="4" fill="#fda4af" opacity="0.6"/>
+  <circle cx="300" cy="580" r="5" fill="#c4b5fd" opacity="0.5"/>
+  <circle cx="900" cy="590" r="4" fill="#86efac" opacity="0.5"/>
+
+  <!-- Torii gate (left) -->
+  <g transform="translate(140,200)" opacity="0.7">
+    <rect x="-55" y="0" width="110" height="16" rx="8" fill="#f9a8d4"/>
+    <path d="M-65 0 Q0 -20 65 0" fill="none" stroke="#f9a8d4" stroke-width="8" stroke-linecap="round"/>
+    <rect x="-44" y="16" width="88" height="11" rx="5.5" fill="#f9a8d4" opacity="0.8"/>
+    <rect x="-38" y="27" width="18" height="120" rx="9" fill="#f9a8d4"/>
+    <rect x="20" y="27" width="18" height="120" rx="9" fill="#f9a8d4"/>
+    <rect x="-46" y="82" width="92" height="10" rx="5" fill="#f9a8d4" opacity="0.7"/>
+  </g>
+
+  <!-- Torii gate (right, smaller) -->
+  <g transform="translate(1060,260)" opacity="0.5">
+    <rect x="-42" y="0" width="84" height="12" rx="6" fill="#c4b5fd"/>
+    <path d="M-50 0 Q0 -16 50 0" fill="none" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round"/>
+    <rect x="-34" y="12" width="68" height="8" rx="4" fill="#c4b5fd" opacity="0.8"/>
+    <rect x="-30" y="20" width="14" height="90" rx="7" fill="#c4b5fd"/>
+    <rect x="16" y="20" width="14" height="90" rx="7" fill="#c4b5fd"/>
+  </g>
+
+  <!-- Petals -->
+  <ellipse cx="320" cy="100" rx="22" ry="13" fill="#fda4af" opacity="0.55" transform="rotate(-15 320 100)"/>
+  <ellipse cx="880" cy="80" rx="18" ry="11" fill="#c4b5fd" opacity="0.5" transform="rotate(20 880 80)"/>
+  <ellipse cx="420" cy="560" rx="20" ry="12" fill="#86efac" opacity="0.5" transform="rotate(10 420 560)"/>
+  <ellipse cx="760" cy="570" rx="22" ry="13" fill="#fda4af" opacity="0.45" transform="rotate(-25 760 570)"/>
+  <ellipse cx="100" cy="520" rx="18" ry="11" fill="#fde68a" opacity="0.5" transform="rotate(30 100 520)"/>
+  <ellipse cx="1100" cy="380" rx="16" ry="10" fill="#7dd3fc" opacity="0.5" transform="rotate(-10 1100 380)"/>
+
+  <!-- Center: Three glowing orbs -->
+  <circle cx="520" cy="315" r="60" fill="white" opacity="0.5"/>
+  <circle cx="520" cy="315" r="44" fill="#fda4af" opacity="0.35"/>
+  <text x="520" y="332" text-anchor="middle" font-size="44" font-family="serif">🌸</text>
+
+  <circle cx="640" cy="295" r="60" fill="white" opacity="0.5"/>
+  <circle cx="640" cy="295" r="44" fill="#c4b5fd" opacity="0.3"/>
+  <text x="640" y="312" text-anchor="middle" font-size="44" font-family="serif">⛩</text>
+
+  <circle cx="760" cy="315" r="60" fill="white" opacity="0.5"/>
+  <circle cx="760" cy="315" r="44" fill="#86efac" opacity="0.3"/>
+  <text x="760" y="332" text-anchor="middle" font-size="44" font-family="serif">🌿</text>
+
+  <!-- Main title -->
+  <text x="640" y="178" text-anchor="middle" font-size="68" font-weight="300" letter-spacing="0.12em"
+    font-family="'Noto Serif JP', 'Yu Mincho', serif" fill="#3d3550">魂の聖地診断</text>
+
+  <!-- Subtitle -->
+  <text x="640" y="228" text-anchor="middle" font-size="22" letter-spacing="0.28em"
+    font-family="'Noto Sans JP', sans-serif" fill="#9d8fb0" opacity="0.85">SOUL SANCTUARY DIAGNOSIS</text>
+
+  <!-- Divider -->
+  <line x1="480" y1="248" x2="800" y2="248" stroke="#e2d4f0" stroke-width="1" opacity="0.8"/>
+
+  <!-- Description -->
+  <text x="640" y="420" text-anchor="middle" font-size="28" font-weight="300" letter-spacing="0.06em"
+    font-family="'Noto Sans JP', sans-serif" fill="#5a5070">11の問いに答えて、あなたの魂が求める</text>
+  <text x="640" y="462" text-anchor="middle" font-size="28" font-weight="300" letter-spacing="0.06em"
+    font-family="'Noto Sans JP', sans-serif" fill="#5a5070">日本のパワースポット・聖地を見つけよう</text>
+
+  <!-- Tag pills -->
+  <rect x="398" y="498" width="110" height="36" rx="18" fill="#fda4af" opacity="0.25"/>
+  <rect x="399" y="499" width="108" height="34" rx="17" fill="none" stroke="#fda4af" stroke-width="1"/>
+  <text x="453" y="521" text-anchor="middle" font-size="16" font-family="'Noto Sans JP', sans-serif" fill="#c05070">山神の守り人</text>
+
+  <rect x="522" y="498" width="110" height="36" rx="18" fill="#c4b5fd" opacity="0.25"/>
+  <rect x="523" y="499" width="108" height="34" rx="17" fill="none" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="577" y="521" text-anchor="middle" font-size="16" font-family="'Noto Sans JP', sans-serif" fill="#7c6d8a">海龍の導き</text>
+
+  <rect x="646" y="498" width="110" height="36" rx="18" fill="#86efac" opacity="0.25"/>
+  <rect x="647" y="499" width="108" height="34" rx="17" fill="none" stroke="#86efac" stroke-width="1"/>
+  <text x="701" y="521" text-anchor="middle" font-size="16" font-family="'Noto Sans JP', sans-serif" fill="#3a7a50">花神の祝福</text>
+
+  <rect x="770" y="498" width="110" height="36" rx="18" fill="#fde68a" opacity="0.3"/>
+  <rect x="771" y="499" width="108" height="34" rx="17" fill="none" stroke="#fbbf24" stroke-width="1"/>
+  <text x="825" y="521" text-anchor="middle" font-size="16" font-family="'Noto Sans JP', sans-serif" fill="#8a7020">炎の意志</text>
+
+  <!-- Bottom sparkle line -->
+  <text x="640" y="590" text-anchor="middle" font-size="14" letter-spacing="0.22em"
+    font-family="'Noto Sans JP', sans-serif" fill="#c4b5fd" opacity="0.7">✦  無料 · 約2〜3分  ✦</text>
+</svg>
