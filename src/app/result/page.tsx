@@ -28,15 +28,13 @@ function rakutenUrl(spotName: string, prefecture: string) {
 }
 
 function jalanSightseeingUrl(spotName: string, prefecture: string) {
-  const keyword = `${spotName} ${prefecture}`
-  const dest = `https://www.jalan.net/kankou/grp-keyword/?keyword=${encodeURIComponent(keyword)}`
+  const dest = `https://www.jalan.net/kankou/sightseeing_pref/?keyword=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}`
   if (!JALAN_A8_ID) return dest
   return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
 
-function jalanHotelUrl(spotName: string, prefecture: string) {
-  const keyword = `${spotName} ${prefecture}`
-  const dest = `https://www.jalan.net/yadoyomi/yadlist.do?rootCd=01&keyword=${encodeURIComponent(keyword)}`
+function jalanHotelUrl(spotName: string) {
+  const dest = `https://www.jalan.net/yad/sakus/Yadsakus.do?rootCd=01&keyword=${encodeURIComponent(spotName)}`
   if (!JALAN_A8_ID) return dest
   return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
@@ -194,7 +192,7 @@ function ResultContent() {
                       🗺 観光スポットを見る
                     </a>
                     <a
-                      href={jalanHotelUrl(spot.name, spot.prefecture)}
+                      href={jalanHotelUrl(spot.name)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
