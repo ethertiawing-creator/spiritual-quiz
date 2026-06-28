@@ -15,9 +15,6 @@ import { TypeKey } from '@/data/questions'
 //       例: 'a1b2c3d4.e5f6g7h8'
 const RAKUTEN_AFFILIATE_ID = ''
 
-// じゃらん: A8.netでじゃらんと提携後、リンクURLの a8mat= 以降を貼る
-//           例: 'IN2xxx.3xxxxx.AAAAAA.xxxxxxxx'
-const JALAN_A8_ID = '4B66KH+9OW19U+14CS+609HT'
 // ──────────────────────────────────────────────────────────────────
 
 function rakutenUrl(spotName: string, prefecture: string) {
@@ -30,15 +27,11 @@ function rakutenUrl(spotName: string, prefecture: string) {
 const APP_URL = 'https://spiritual-quiz-eight.vercel.app'
 
 function jalanSightseeingUrl(spotName: string, prefecture: string) {
-  const api = `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=sight`
-  if (!JALAN_A8_ID) return api
-  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(api)}`
+  return `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=sight`
 }
 
 function jalanHotelUrl(spotName: string, prefecture: string) {
-  const api = `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=hotel`
-  if (!JALAN_A8_ID) return api
-  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(api)}`
+  return `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=hotel`
 }
 
 function ResultContent() {
