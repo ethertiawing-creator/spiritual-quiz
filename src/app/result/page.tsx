@@ -20,14 +20,23 @@ const RAKUTEN_AFFILIATE_ID = ''
 const JALAN_A8_ID = '4B66KH+9OW19U+14CS+609HT'
 // ──────────────────────────────────────────────────────────────────
 
-function rakutenUrl(spotName: string) {
-  const dest = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spotName)}`
+function rakutenUrl(spotName: string, prefecture: string) {
+  const keyword = `${spotName} ${prefecture}`
+  const dest = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(keyword)}`
   if (!RAKUTEN_AFFILIATE_ID) return dest
   return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(dest)}`
 }
 
-function jalanUrl(spotName: string) {
-  const dest = `https://www.jalan.net/kankou/?keyword=${encodeURIComponent(spotName)}`
+function jalanSightseeingUrl(spotName: string, prefecture: string) {
+  const keyword = `${spotName} ${prefecture}`
+  const dest = `https://www.jalan.net/kankou/?keyword=${encodeURIComponent(keyword)}`
+  if (!JALAN_A8_ID) return dest
+  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
+}
+
+function jalanHotelUrl(spotName: string, prefecture: string) {
+  const keyword = `${spotName} ${prefecture}`
+  const dest = `https://www.jalan.net/yadoyomi/yadlist/?keyword=${encodeURIComponent(keyword)}`
   if (!JALAN_A8_ID) return dest
   return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
@@ -167,38 +176,54 @@ function ResultContent() {
                   <p style={{ fontSize: 13, lineHeight: 2, color: '#5a5070', fontWeight: 300, marginBottom: 12 }}>
                     {spot.description}
                   </p>
-                  <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 4 }}>
                     <a
-                      href={jalanUrl(spot.name)}
+                      href={jalanSightseeingUrl(spot.name, spot.prefecture)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
                         fontSize: 11,
                         color: type.textColor,
-                        opacity: 0.7,
-                        letterSpacing: '0.1em',
+                        opacity: 0.75,
+                        letterSpacing: '0.08em',
                         textDecoration: 'none',
                         borderBottom: `1px solid ${type.glowColor}`,
                         paddingBottom: 1,
                       }}
                     >
-                      じゃらんで探す →
+                      🗺 観光スポットを見る
                     </a>
                     <a
-                      href={rakutenUrl(spot.name)}
+                      href={jalanHotelUrl(spot.name, spot.prefecture)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 11,
+                        color: type.textColor,
+                        opacity: 0.75,
+                        letterSpacing: '0.08em',
+                        textDecoration: 'none',
+                        borderBottom: `1px solid ${type.glowColor}`,
+                        paddingBottom: 1,
+                      }}
+                    >
+                      🏨 近くの宿を探す
+                    </a>
+                    <a
+                      href={rakutenUrl(spot.name, spot.prefecture)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
                         fontSize: 11,
                         color: '#bf3333',
-                        opacity: 0.7,
-                        letterSpacing: '0.1em',
+                        opacity: 0.75,
+                        letterSpacing: '0.08em',
                         textDecoration: 'none',
-                        borderBottom: '1px solid #f9a8d4',
+                        borderBottom: '1px solid #fca5a5',
                         paddingBottom: 1,
                       }}
                     >
-                      楽天トラベルで探す →
+                      🏨 楽天トラベルで探す
                     </a>
                   </div>
                 </div>
