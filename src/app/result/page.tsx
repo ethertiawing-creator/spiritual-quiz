@@ -9,6 +9,14 @@ import AdBanner from '@/components/AdBanner'
 import { personalityTypes } from '@/data/types'
 import { TypeKey } from '@/data/questions'
 
+const RAKUTEN_AFFILIATE_ID = '' // 楽天アフィリエイトID取得後にここへ入力
+
+function rakutenUrl(spotName: string) {
+  const base = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spotName)}`
+  if (!RAKUTEN_AFFILIATE_ID) return base
+  return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(base)}`
+}
+
 function ResultContent() {
   const params = useSearchParams()
   const typeKey = (params.get('type') ?? 'A') as TypeKey
@@ -162,7 +170,7 @@ function ResultContent() {
                       じゃらんで探す →
                     </a>
                     <a
-                      href={`https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spot.name)}&f_area=&f_category=`}
+                      href={rakutenUrl(spot.name)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
