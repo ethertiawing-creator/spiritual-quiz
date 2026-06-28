@@ -9,12 +9,21 @@ import AdBanner from '@/components/AdBanner'
 import { personalityTypes } from '@/data/types'
 import { TypeKey } from '@/data/questions'
 
-const RAKUTEN_AFFILIATE_ID = '' // 楽天アフィリエイトID取得後にここへ入力
+// ── アフィリエイトID設定欄 ──────────────────────────
+const RAKUTEN_AFFILIATE_ID = '' // 例: 'a1b2c3d4.e5f6g7h8'
+const JALAN_A8_ID = ''          // 例: 'a17121234567b' (A8.netのじゃらん提携後)
+// ────────────────────────────────────────────────────
 
 function rakutenUrl(spotName: string) {
-  const base = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spotName)}`
-  if (!RAKUTEN_AFFILIATE_ID) return base
-  return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(base)}`
+  const dest = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spotName)}`
+  if (!RAKUTEN_AFFILIATE_ID) return dest
+  return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(dest)}`
+}
+
+function jalanUrl(spotName: string) {
+  const dest = `https://www.jalan.net/kankou/?keyword=${encodeURIComponent(spotName)}`
+  if (!JALAN_A8_ID) return dest
+  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
 
 function ResultContent() {
@@ -154,7 +163,7 @@ function ResultContent() {
                   </p>
                   <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
                     <a
-                      href={`https://www.jalan.net/kankou/spt_${encodeURIComponent(spot.name)}/`}
+                      href={jalanUrl(spot.name)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
