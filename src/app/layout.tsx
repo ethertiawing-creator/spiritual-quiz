@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 const APP_URL = 'https://spiritual-quiz-eight.vercel.app'
@@ -63,7 +64,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192.svg" />
         <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
       </head>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+        {process.env.NEXT_PUBLIC_ADSENSE_ID && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+      </body>
     </html>
   )
 }

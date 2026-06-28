@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Petals from '@/components/Petals'
 import SpotIllustration from '@/components/SpotIllustration'
+import AdBanner from '@/components/AdBanner'
 import { personalityTypes } from '@/data/types'
 import { TypeKey } from '@/data/questions'
 
@@ -117,6 +118,9 @@ function ResultContent() {
 
         <div className="divider" />
 
+        {/* 広告①：スポット前 */}
+        <AdBanner slot="1234567890" style={{ marginBottom: 24 }} />
+
         {/* おすすめスポット */}
         <div style={{ marginBottom: 40 }}>
           <p style={{ fontSize: 11, letterSpacing: '0.28em', color: type.textColor, opacity: 0.75,
@@ -140,22 +144,40 @@ function ResultContent() {
                   <p style={{ fontSize: 13, lineHeight: 2, color: '#5a5070', fontWeight: 300, marginBottom: 12 }}>
                     {spot.description}
                   </p>
-                  <a
-                    href={`https://www.jalan.net/kankou/spt_${encodeURIComponent(spot.name)}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontSize: 11,
-                      color: type.textColor,
-                      opacity: 0.7,
-                      letterSpacing: '0.1em',
-                      textDecoration: 'none',
-                      borderBottom: `1px solid ${type.glowColor}`,
-                      paddingBottom: 1,
-                    }}
-                  >
-                    旅を計画する →
-                  </a>
+                  <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+                    <a
+                      href={`https://www.jalan.net/kankou/spt_${encodeURIComponent(spot.name)}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 11,
+                        color: type.textColor,
+                        opacity: 0.7,
+                        letterSpacing: '0.1em',
+                        textDecoration: 'none',
+                        borderBottom: `1px solid ${type.glowColor}`,
+                        paddingBottom: 1,
+                      }}
+                    >
+                      じゃらんで探す →
+                    </a>
+                    <a
+                      href={`https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spot.name)}&f_area=&f_category=`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 11,
+                        color: '#bf3333',
+                        opacity: 0.7,
+                        letterSpacing: '0.1em',
+                        textDecoration: 'none',
+                        borderBottom: '1px solid #f9a8d4',
+                        paddingBottom: 1,
+                      }}
+                    >
+                      楽天トラベルで探す →
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -184,6 +206,9 @@ function ResultContent() {
             </button>
           </div>
         </div>
+
+        {/* 広告②：シェア後 */}
+        <AdBanner slot="0987654321" style={{ marginBottom: 24 }} />
 
         {/* もう一度 */}
         <div style={{ textAlign: 'center' }}>
