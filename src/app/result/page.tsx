@@ -27,18 +27,18 @@ function rakutenUrl(spotName: string, prefecture: string) {
   return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(dest)}`
 }
 
+const APP_URL = 'https://spiritual-quiz-eight.vercel.app'
+
 function jalanSightseeingUrl(spotName: string, prefecture: string) {
-  const keyword = `${prefecture}　${spotName}`
-  const dest = `https://www.jalan.net/kankou/kw_${encodeURIComponent(keyword)}/?screenId=OUW1011&processId=&afCd=&rootCd=7741&exLrgGenreCd=01`
-  if (!JALAN_A8_ID) return dest
-  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
+  const api = `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=sight`
+  if (!JALAN_A8_ID) return api
+  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(api)}`
 }
 
 function jalanHotelUrl(spotName: string, prefecture: string) {
-  const keyword = `${prefecture}　${spotName}`
-  const dest = `https://www.jalan.net/uw/uwp2011/uww2011init.do?keyword=${encodeURIComponent(keyword)}&distCd=06&rootCd=7701&screenId=FWPCTOP&ccnt=button-fw&image1=`
-  if (!JALAN_A8_ID) return dest
-  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
+  const api = `${APP_URL}/api/jalan?spot=${encodeURIComponent(spotName)}&pref=${encodeURIComponent(prefecture)}&type=hotel`
+  if (!JALAN_A8_ID) return api
+  return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(api)}`
 }
 
 function ResultContent() {
