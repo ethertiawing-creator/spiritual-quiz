@@ -9,19 +9,9 @@ import AdBanner from '@/components/AdBanner'
 import { personalityTypes } from '@/data/types'
 import { TypeKey } from '@/data/questions'
 
-// ── アフィリエイト設定欄 ─────────────────────────────────────────
-// 楽天: ダッシュボード「リンク作成」で生成されるURLの
-//       hb.afl.rakuten.co.jp/hgc/以降〜末尾スラッシュまでを貼る
-//       例: 'a1b2c3d4.e5f6g7h8'
-const RAKUTEN_AFFILIATE_ID = ''
 
-// ──────────────────────────────────────────────────────────────────
-
-function rakutenUrl(spotName: string, prefecture: string) {
-  const keyword = `${spotName} ${prefecture}`
-  const dest = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(keyword)}`
-  if (!RAKUTEN_AFFILIATE_ID) return dest
-  return `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(dest)}`
+function rakutenUrl(spotName: string) {
+  return `${APP_URL}/api/rakuten?spot=${encodeURIComponent(spotName)}`
 }
 
 const APP_URL = 'https://spiritual-quiz-eight.vercel.app'
@@ -203,7 +193,7 @@ function ResultContent() {
                       🏨 近くの宿を探す
                     </a>
                     <a
-                      href={rakutenUrl(spot.name, spot.prefecture)}
+                      href={rakutenUrl(spot.name)}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
