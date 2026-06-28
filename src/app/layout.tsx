@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-const APP_URL = 'https://spiritual-quiz.vercel.app'
+const APP_URL = 'https://spiritual-quiz-eight.vercel.app'
 const TITLE = '魂の聖地診断 | あなたの魂が導く、聖地への旅'
 const DESCRIPTION =
   '11の問いに答えるだけ。あなたの魂が本当に求めている日本のパワースポット・聖地・秘境が明らかになります。11種の魂タイプから診断。'
