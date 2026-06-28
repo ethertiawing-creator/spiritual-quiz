@@ -61,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="h-full">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4269129263345205" />
         <link rel="apple-touch-icon" href="/icon-192.svg" />
         <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
         <Script
