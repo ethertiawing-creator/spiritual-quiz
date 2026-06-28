@@ -29,14 +29,14 @@ function rakutenUrl(spotName: string, prefecture: string) {
 
 function jalanSightseeingUrl(spotName: string, prefecture: string) {
   const keyword = `${spotName} ${prefecture}`
-  const dest = `https://www.jalan.net/kankou/?keyword=${encodeURIComponent(keyword)}`
+  const dest = `https://www.jalan.net/kankou/grp-keyword/?keyword=${encodeURIComponent(keyword)}`
   if (!JALAN_A8_ID) return dest
   return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
 
 function jalanHotelUrl(spotName: string, prefecture: string) {
   const keyword = `${spotName} ${prefecture}`
-  const dest = `https://www.jalan.net/yadoyomi/yadlist/?keyword=${encodeURIComponent(keyword)}`
+  const dest = `https://www.jalan.net/yadoyomi/yadlist.do?rootCd=01&keyword=${encodeURIComponent(keyword)}`
   if (!JALAN_A8_ID) return dest
   return `https://px.a8.net/svt/ejp?a8mat=${JALAN_A8_ID}&a8ejpredirect=${encodeURIComponent(dest)}`
 }
