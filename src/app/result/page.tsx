@@ -17,7 +17,7 @@ const RAKUTEN_AFFILIATE_ID = ''
 
 // じゃらん: A8.netでじゃらんと提携後、リンクURLの a8mat= 以降を貼る
 //           例: 'IN2xxx.3xxxxx.AAAAAA.xxxxxxxx'
-const JALAN_A8_ID = ''
+const JALAN_A8_ID = '4B66KH+9OW19U+14CS+609HT'
 // ──────────────────────────────────────────────────────────────────
 
 function rakutenUrl(spotName: string) {
