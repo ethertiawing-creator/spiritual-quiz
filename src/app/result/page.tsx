@@ -9,10 +9,16 @@ import AdBanner from '@/components/AdBanner'
 import { personalityTypes } from '@/data/types'
 import { TypeKey } from '@/data/questions'
 
-// ── アフィリエイトID設定欄 ──────────────────────────
-const RAKUTEN_AFFILIATE_ID = '' // 例: 'a1b2c3d4.e5f6g7h8'
-const JALAN_A8_ID = ''          // 例: 'a17121234567b' (A8.netのじゃらん提携後)
-// ────────────────────────────────────────────────────
+// ── アフィリエイト設定欄 ─────────────────────────────────────────
+// 楽天: ダッシュボード「リンク作成」で生成されるURLの
+//       hb.afl.rakuten.co.jp/hgc/以降〜末尾スラッシュまでを貼る
+//       例: 'a1b2c3d4.e5f6g7h8'
+const RAKUTEN_AFFILIATE_ID = ''
+
+// じゃらん: A8.netでじゃらんと提携後、リンクURLの a8mat= 以降を貼る
+//           例: 'IN2xxx.3xxxxx.AAAAAA.xxxxxxxx'
+const JALAN_A8_ID = ''
+// ──────────────────────────────────────────────────────────────────
 
 function rakutenUrl(spotName: string) {
   const dest = `https://travel.rakuten.co.jp/search/?f_keyword=${encodeURIComponent(spotName)}`
