@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server'
 
-const RAKUTEN_AFFILIATE_ID = '' // 楽天アフィリエイトID取得後に入力
+const RAKUTEN_AFFILIATE_ID = '55587ec1.f879d3bf.55587ec2.40fc65e0'
 
 export async function GET(req: NextRequest) {
   const spot = req.nextUrl.searchParams.get('spot') ?? ''
